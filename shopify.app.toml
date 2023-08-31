@@ -1,0 +1,26 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+name = "reviewwidget"
+client_id = "50a70b9e13035bb6365f67f84eaab2fa"
+application_url = "http://wholescaleapp.local/verify"
+embedded = false
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_customers,write_content,write_products,write_orders,write_price_rules,write_discounts"
+
+[auth]
+redirect_urls = [
+  "http://wholescaleapp.local/",
+  "http://wholescaleapp.local/install",
+  "http://wholescaleapp.local/redirect"
+]
+
+[webhooks]
+api_version = "2023-07"
+
+[pos]
+embedded = false
+
+[build]
+dev_store_url = "reviewcheck.myshopify.com"
