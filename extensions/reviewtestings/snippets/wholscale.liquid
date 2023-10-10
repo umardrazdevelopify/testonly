@@ -11,7 +11,7 @@
 
   }
   .wholescale--has-search .wholescale--form-control-feedback{
-    line-height: 1.7rem !important;
+    line-height: 1.7rem !important; 
   }
   #review_form_save, #question_form_save{
     background: black;
@@ -165,7 +165,7 @@ input[type=text], input[type=password], input[type=email], input[type=url], inpu
       .wholescale--main-section{
         padding: 0px !important;
       }
-      .wholescale--powered_by{
+      .shop.d{
         margin-bottom: 20px;
       }
  .ws--review-container > .ws--star-under{
@@ -197,7 +197,7 @@ i.ws--star.ws--star-over.fa1.fa-star.ws--star-visible {
 .wholescale--verified_buyer {
     font-weight: 500!important;
 }
-.wholescale--powered_by span {
+.shop.d span {
     font-size: 13px !important;
 }
 .fa-star, .fa-star-o, .fa-star-half-o {
@@ -479,7 +479,7 @@ $("#submitSearch").click(function(){
 
 
     //var app_question_url = "https://d8a5-182-185-207-164.ngrok.io";
-    var app_question_url = "https://6ada-103-162-136-121.ngrok-free.app";
+    var app_question_url = "https://201b-103-162-136-121.ngrok-free.app";
     var question_domain = '{{shop.domain}}';
     var question_product_id = '{{product.id}}';
     
@@ -661,7 +661,7 @@ $("#submitSearch").click(function(){
   
    $(document).ready(function(){
      // var dvlp_app_url = 'https://b615-103-162-136-121.ap.ngrok.io';
-     var dvlp_app_url = 'https://6ada-103-162-136-121.ngrok-free.app';
+     var dvlp_app_url = 'https://201b-103-162-136-121.ngrok-free.app';
      var review_product_id = '{{product.id}}';
       var customerId = '{{ customer.id }}';
     console.log('customer ID',customerId)
@@ -720,7 +720,7 @@ $("#submitSearch").click(function(){
 </script>
 <!--   Write a Review Part End -->
 <script>
-var dvlp_app_url = "https://6ada-103-162-136-121.ngrok-free.app";
+var dvlp_app_url = "https://201b-103-162-136-121.ngrok-free.app";
 var domain = '{{shop.domain}}';
 var product_id = '{{product.id}}';
 var page = 1;
@@ -778,7 +778,7 @@ console.log('URL:', url);
 <script>
 
     //var count_app_url = "https://d8a5-182-185-207-164.ngrok.io";
-    var count_app_url = "https://6ada-103-162-136-121.ngrok-free.app";
+    var count_app_url = "https://201b-103-162-136-121.ngrok-free.app";
     var count_domain = '{{shop.domain}}';
     var count_product_id = '{{product.id}}';
 
@@ -848,8 +848,6 @@ $('#wholescale--tabs-nav li').click(function(){
   $(activeTab).fadeIn();
   return false;
 });
-
- 
 </script>
 <script>
 $(document).ready(function(){
