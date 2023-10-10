@@ -1,19 +1,24 @@
 # Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
-name = "reviewsapp"
-client_id = "fcb80db40569b8c0f3247de6ccfe5f19"
+name = "Loyality"
+client_id = "aba60543a66980c464dd8640d04a1502"
 application_url = "http://wholescaleapp.local/verify"
-embedded = true
+embedded = false
 
 [access_scopes]
 # Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
 scopes = "write_customers,write_content,write_products,write_orders,write_price_rules,write_discounts"
+use_legacy_install_flow = true
 
 [auth]
-redirect_urls = [ "http://wholescaleapp.local/redirect" ]
+redirect_urls = [
+  "http://wholescaleapp.local/",
+  "http://wholescaleapp.local/install",
+  "http://wholescaleapp.local/redirect"
+]
 
 [webhooks]
-api_version = "2023-07"
+api_version = "2023-04"
 
 [pos]
 embedded = false

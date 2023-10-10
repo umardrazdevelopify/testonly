@@ -23,4 +23,4 @@ api_version = "2023-07"
 embedded = false
 
 [build]
-dev_store_url = "reviewcheck.myshopify.com"
+dev_store_url = "reviews-junctions-store-two.myshopify.com"
