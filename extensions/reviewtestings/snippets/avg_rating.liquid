@@ -6,6 +6,9 @@
   crossorigin="anonymous"
 ></script>
 <style>
+.average_rating_reviews{
+  cursor: pointer !important;
+}
   .ws--review-container {
     margin-top: 10px;
   }
@@ -72,11 +75,7 @@
     <i class="ws--star ws--star-under fa1 fa-star-o">
       <i class="ws--star ws--star-over fa1 fa-star"></i>
     </i>
-    <span
-      >&nbsp;<a href="#total_reviews_p"
-        >({{ product.metafields.whol.average_rating }}) {{ product.metafields.whol.product_reviews }} Reviews</a
-      ></span
-    >
+    <span class = "average_rating_reviews">({{ product.metafields.whol.average_rating }}) {{ product.metafields.whol.product_reviews }} Reviews</span>
   </div>
   <script>
     $(document).ready(function(){
@@ -99,6 +98,16 @@
       }
 
     });
+
+    $(document).ready(function() {
+  $('.average_rating_reviews').click(function() {
+    // Scroll to the target div with class "reviews_heading"
+    $('html, body').animate({
+      scrollTop: $('.reviews_heading').offset().top
+    }, 1000); // Adjust the duration (in milliseconds) as needed
+  });
+});
+
   </script>
 {% else %}
   {% if product.id != 7361405059272
@@ -116,7 +125,7 @@
       <i aria-hidden="true" class="ws--star-under fa fa-star-o"></i>
       <i aria-hidden="true" class="ws--star-under fa fa-star-o"></i>
       <i aria-hidden="true" class="ws--star-under fa fa-star-o"></i>
-      <span>&nbsp;<a href="javascript:void(0)">0 Reviews</a></span>
+      <span>0 Reviews</span>
     </div>
   {% endif %}
 {% endif %}
