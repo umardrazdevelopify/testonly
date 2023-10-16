@@ -1,8 +1,8 @@
 # Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
 name = "Loyality"
-client_id = "aba60543a66980c464dd8640d04a1502"
-application_url = "http://wholescaleapp.local/verify"
+client_id = "c205d3f08d94faa2cbc4f286637480eb"
+application_url = "https://app.reviewsjunctionapps.com/verify"
 embedded = false
 
 [access_scopes]
@@ -12,13 +12,13 @@ use_legacy_install_flow = true
 
 [auth]
 redirect_urls = [
-  "http://wholescaleapp.local/",
-  "http://wholescaleapp.local/install",
-  "http://wholescaleapp.local/redirect"
+  "https://app.reviewsjunctionapps.com/",
+  "https://app.reviewsjunctionapps.com/install",
+  "https://app.reviewsjunctionapps.com/redirect"
 ]
 
 [webhooks]
-api_version = "2023-04"
+api_version = "2023-10"
 
 [pos]
 embedded = false

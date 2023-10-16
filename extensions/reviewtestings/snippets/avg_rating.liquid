@@ -1,14 +1,15 @@
-
-<link rel="stylesheet" media="screen" href="https://cdn.freshbots.ai/assets/share/css/chat-combined.min.css?v=0.26">
+<link
+  rel="stylesheet"
+  media="screen"
+  href="https://cdn.freshbots.ai/assets/share/css/chat-combined.min.css?v=0.26">
 <script
   src="https://code.jquery.com/jquery-3.6.0.min.js"
   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-  crossorigin="anonymous"
-></script>
+  crossorigin="anonymous"></script>
 <style>
-.average_rating_reviews{
-  cursor: pointer !important;
-}
+  .average_rating_reviews {
+    cursor: pointer !important;
+  }
   .ws--review-container {
     margin-top: 10px;
   }
@@ -58,7 +59,7 @@
 </style>
 {%- assign random_number = 'now' | date: '%N' -%}
 
-{% if product.metafields.whol.average_rating and product.metafields.whol.product_reviews != 0 %}
+{% if product.metafields.reviewsjunction.average_rating and product.metafields.reviewsjunction.product_reviews != 0 %}
   <div id="stars_reviews_avg_{{ product.id }}_{{ random_number }}" class="ws--review-container">
     <i class="ws--star ws--star-under fa1 fa-star-o">
       <i class="ws--star ws--star-over fa1 fa-star"></i>
@@ -75,57 +76,50 @@
     <i class="ws--star ws--star-under fa1 fa-star-o">
       <i class="ws--star ws--star-over fa1 fa-star"></i>
     </i>
-    <span class = "average_rating_reviews">({{ product.metafields.whol.average_rating }}) {{ product.metafields.whol.product_reviews }} Reviews</span>
+    <span class="average_rating_reviews">({{ product.metafields.reviewsjunction.average_rating }}) {{ product.metafields.reviewsjunction.product_reviews }} Reviews</span>
   </div>
   <script>
-    $(document).ready(function(){
-      var rating1 = {{ product.metafields.whol.average_rating }};
-      console.log('so for soooo good'+{{ product.metafields.whol.average_rating }});
+    $(document).ready(function() {
+      var rating1 = {{ product.metafields.reviewsjunction.average_rating }};
+      console.log('so for soooo good' + {{ product.metafields.reviewsjunction.average_rating }});
       var div_id = 'stars_reviews_avg_{{ product.id }}_{{ random_number }}';
       rateStyle(rating1, div_id);
-      // javascript
+
+// javascript
       function rateStyle(num, divID) {
         var ratingRounded = Math.floor(num);
         var starArray = document.getElementById(divID).querySelectorAll(".ws--star-over");
         for (var i = 0; i < ratingRounded; i++) {
           starArray[i].classList.add("ws--star-visible");
         }
-        var finalStar = Math.round((num-ratingRounded)*100);
+        var finalStar = Math.round((num - ratingRounded) * 100);
         if (finalStar != 0) {
           starArray[ratingRounded].classList.add("ws--star-visible");
-          starArray[ratingRounded].style.width=finalStar+"%";
+          starArray[ratingRounded].style.width = finalStar + "%";
         }
       }
 
     });
 
     $(document).ready(function() {
-  $('.average_rating_reviews').click(function() {
-    // Scroll to the target div with class "reviews_heading"
-    $('html, body').animate({
-      scrollTop: $('.reviews_heading').offset().top
-    }, 1000); // Adjust the duration (in milliseconds) as needed
-  });
-});
+      $('.average_rating_reviews').click(function() {
 
+// Scroll to the target div with class "reviews_heading"
+        $('html, body').animate({
+          scrollTop: $('.reviews_heading').offset().top
+        }, 1000); // Adjust the duration (in milliseconds) as needed
+      });
+    });
   </script>
 {% else %}
-  {% if product.id != 7361405059272
-    and product.id != 7401418752200
-    and product.id != 7380966408392
-    and product.id != 7361423147208
-    and product.id != 7183162441928
-    and product.id != 7183163326664
-    and product.id != 7183164670152
-    and product.id != 6163368345800
-  %}
-    <div class="ws--review-container">
-      <i aria-hidden="true" class="ws--star-under fa fa-star-o"></i>
-      <i aria-hidden="true" class="ws--star-under fa fa-star-o"></i>
-      <i aria-hidden="true" class="ws--star-under fa fa-star-o"></i>
-      <i aria-hidden="true" class="ws--star-under fa fa-star-o"></i>
-      <i aria-hidden="true" class="ws--star-under fa fa-star-o"></i>
-      <span>0 Reviews</span>
-    </div>
-  {% endif %}
+
+  <div class="ws--review-container">
+    <i aria-hidden="true" class="ws--star-under fa fa-star-o"></i>
+    <i aria-hidden="true" class="ws--star-under fa fa-star-o"></i>
+    <i aria-hidden="true" class="ws--star-under fa fa-star-o"></i>
+    <i aria-hidden="true" class="ws--star-under fa fa-star-o"></i>
+    <i aria-hidden="true" class="ws--star-under fa fa-star-o"></i>
+    <span>0 Reviews</span>
+  </div>
+
 {% endif %}
